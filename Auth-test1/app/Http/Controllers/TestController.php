@@ -35,7 +35,7 @@ class TestController extends Controller
             'model'=>'required|min:3',
             'kW'=>'required|integer|min:50|max:250',
             'brand_id'=>'required|integer|exists:brands,id',
-            // 'pilots_id'=>'required|integer'
+            'pilot_id.*'=>'required|exists:pilot,id'
         ]);
 
         $brand= Brand::findOrFail($request->brand_id);
@@ -65,7 +65,7 @@ class TestController extends Controller
             'model'=>'required|min:3',
             'kW'=>'required|integer|min:50|max:250',
             'brand_id'=>'required|integer|exists:brands,id',
-            // 'pilots_id'=>'required|integer'
+            'pilot_id.*'=>'required|exists:pilot,id'
         ]);
         $brand= Brand::findOrFail($request->brand_id);
         $car=Car::findOrFail($id);
