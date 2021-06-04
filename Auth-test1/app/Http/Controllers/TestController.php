@@ -58,4 +58,25 @@ class TestController extends Controller
         return view('pages.editCar', compact('car','brands','pilots'));
     }
 
+    public function updateCar(Request $request, $id){
+
+        $validated= $request->validate([
+            'name'=>'required|min:3',
+            'model'=>'required|min:3',
+            'kW'=>'required|integer|min:50|max:250',
+            'brand_id'=>'required|integer|exists:brands,id',
+            // 'pilots_id'=>'required|integer'
+        ]);
+        $brand= Brand::findOrFail($request->brand_id);
+        $car=Car::findOrFail($id);
+        $car->update($validated);
+        $car->brand()->associate($brand);
+        $car->save();
+
+        $pilots=Pilot::findOrFail($request->pilots_id);
+        $car->pilots()->sync($pilots);
+        $car->save();
+        return redirect()->route('homepage');
+    }
+
 }

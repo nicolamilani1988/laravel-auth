@@ -34,3 +34,5 @@ Route::post('/store/car','TestController@storeCar')
 
 Route::get('/edit/car/{id}','TestController@editCar')
 -> name('editCar');
+Route::post('/update/car/{id}','TestController@updateCar')
+->name('updateCar');
