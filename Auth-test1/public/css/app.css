@@ -10942,3 +10942,8 @@ a.text-dark:focus {
   }
 }
 
+.pilots li,
+.cars li {
+  list-style-type: none;
+}
+

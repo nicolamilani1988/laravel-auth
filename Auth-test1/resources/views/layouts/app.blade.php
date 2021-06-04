@@ -30,6 +30,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <a href="{{route('createCar')}}">
+                    <button class="btn-primary">CREATE NEW CAR</button>
+                </a>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">

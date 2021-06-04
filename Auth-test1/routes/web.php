@@ -13,10 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
+Route::get('/','TestController@homepage')
+->name('homepage');
+
+Route::get('/pilot/{id}','TestController@pilot')
+->name('pilot');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/create/car','TestController@createCar')
+->name('createCar');
+Route::post('/store/car','TestController@storeCar')
+->name('storeCar');
+
+Route::get('/edit/car/{id}','TestController@editCar')
+-> name('editCar');
