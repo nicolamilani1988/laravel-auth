@@ -25,17 +25,17 @@ Route::get('/','TestController@homepage')
 Route::get('/pilot/{id}','TestController@pilot')
 ->name('pilot');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); //rotta che non so cosa faccia
 
-Route::get('/create/car','TestController@createCar')
+Route::get('/create/car','HomeController@createCar')
 ->name('createCar');
-Route::post('/store/car','TestController@storeCar')
+Route::post('/store/car','HomeController@storeCar')
 ->name('storeCar');
 
-Route::get('/edit/car/{id}','TestController@editCar')
+Route::get('/edit/car/{id}','HomeController@editCar')
 -> name('editCar');
-Route::post('/update/car/{id}','TestController@updateCar')
+Route::post('/update/car/{id}','HomeController@updateCar')
 ->name('updateCar');
 
-Route::get('/delete/car/{id}','TestController@deleteCar')
+Route::get('/delete/car/{id}','HomeController@deleteCar')
 -> name('deleteCar');
