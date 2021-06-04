@@ -11,7 +11,7 @@ class TestController extends Controller
 {
     public function homepage(){
 
-        $cars=Car::all();
+        $cars=Car::where('deleted',false) ->get();
         return view('pages.homepage', compact('cars'));
     }
 
@@ -75,6 +75,14 @@ class TestController extends Controller
 
         $pilots=Pilot::findOrFail($request->pilots_id);
         $car->pilots()->sync($pilots);
+        $car->save();
+        return redirect()->route('homepage');
+    }
+
+    public function deleteCar($id){
+
+        $car=Car::findOrFail($id);
+        $car->deleted = true;
         $car->save();
         return redirect()->route('homepage');
     }

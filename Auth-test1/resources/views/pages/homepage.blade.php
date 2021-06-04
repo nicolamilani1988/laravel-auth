@@ -24,7 +24,7 @@
                             <a href="{{route('editCar',$car->id)}}">
                                 <button class="btn-primary">Update</button>
                             </a>
-                            <a href="">
+                            <a href="{{route('deleteCar',$car->id)}}">
                                 <button class="btn-primary">Delete</button>
                             </a>
                         </div>

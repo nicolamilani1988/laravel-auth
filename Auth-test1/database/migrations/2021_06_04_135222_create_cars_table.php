@@ -17,6 +17,7 @@ class CreateCarsTable extends Migration
             $table->id();
 
             $table->bigInteger('brand_id')->unsigned()->index();
+            $table->boolean('deleted')->default(false);
 
             $table->string('name');
             $table->string('model');

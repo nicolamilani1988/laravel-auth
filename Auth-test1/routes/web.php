@@ -36,3 +36,6 @@ Route::get('/edit/car/{id}','TestController@editCar')
 -> name('editCar');
 Route::post('/update/car/{id}','TestController@updateCar')
 ->name('updateCar');
+
+Route::get('/delete/car/{id}','TestController@deleteCar')
+-> name('deleteCar');
